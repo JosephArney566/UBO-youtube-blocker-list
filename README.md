@@ -15,5 +15,5 @@ Copy and paste the contents of [this link's contents](https://github.com/JosephA
 https://github.com/WhyIsEvery4thYearAlwaysBad/anti-cancer-filter-lists/blob/master/anti_trash_youtube.txt
 ### Hide Youtube #shorts 
 https://letsblock.it/filters/youtube-shorts
-## Hide youtube videos by title
+### Hide youtube videos by title
 https://letsblock.it/filters/youtube-video-title
