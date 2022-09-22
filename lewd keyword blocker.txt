@@ -1,9 +1,7 @@
-# add this to "My filters" in Ublock Origin
 # lewd keyword blocker
 youtube.com###video-title:has-text(/ASMR|Vtuber|Calli|ch.|gura|Hololive|Ina|Cooksie|Yandere|Audio RP|Audio Roleplay|Shondopilled|horny|booba|anime|moan|cum|kronii|cuddles|girlfriend|Elira|nazuna|【|】|Kobo|【Vtuber】|moaning|Fauna|Holostars|IRyS|nenechi|cosplay|kiss|Lovers|Boob|pikamee|mumei|shondo|F1nn5ter|【Vtuber】|【ASMR】|AZKi|Holo|Azur Lane|D*CKS|shylily|d~|Loli|Shota|cunny|Neko|nya/i):upward(ytd-compact-video-renderer, ytd-video-renderer, ytd-movie-renderer, ytd-rich-item-renderer, ytd-show-renderer, ytd-playlist-renderer):remove()
 youtube.com##ytd-channel-name:has-text(/ASMR|Vtuber|Calli|ch.|gura|Hololive|Ina|Cooksie|Yandere|Audio RP|Audio Roleplay|Shondopilled|horny|booba|anime|moan|cum|kronii|cuddles|girlfriend|Elira|nazuna|【|】|Kobo|【Vtuber】|moaning|Fauna|Holostars|IRyS|nenechi|cosplay|kiss|Lovers|Boob|pikamee|mumei|shondo|F1nn5ter|【Vtuber】|【ASMR】|AZKi|Holo|Azur Lane|D*CKS|shylily|d~|Loli|Shota|cunny|Neko|nya/i):remove()
 youtube.com###description-text:has-text(/ASMR|Vtuber|Calli|ch.|gura|Hololive|Ina|Cooksie|Yandere|Audio RP|Audio Roleplay|Shondopilled|horny|booba|anime|moan|cum|kronii|cuddles|girlfriend|Elira|nazuna|【|】|Kobo|【Vtuber】|moaning|Fauna|Holostars|IRyS|nenechi|cosplay|kiss|Lovers|Boob|pikamee|mumei|shondo|F1nn5ter|【Vtuber】|【ASMR】|AZKi|Holo|Azur Lane|D*CKS|shylily|d~|Loli|Shota|cunny|Neko|nya/i):upward(ytd-video-renderer, ytd-movie-renderer, ytd-rich-item-renderer, ytd-show-renderer, ytd-playlist-renderer):remove()
 
-#block this stupid ass font
+#block this stupid font that vtubers use to skirt demonitization
 youtube.com###video-title:has-text(/𝐖|𝐡|𝐚|𝐭|𝐫|𝐞|𝐄|𝐧|𝐝|𝐋|𝐮|𝐜|𝐬|𝐓|𝐘|𝐏|𝐒|𝗦|𝗰|𝗮|𝗿|𝗹|𝗲|𝗚|𝘁|𝘀|𝗼|𝗱|𝗯|𝘆|𝗠|𝗴|𝗻|𝗶|𝗳|𝗡|𝗗|𝗶|𝗕|𝘂|𝗣|𝗽|𝘆|𝑾|𝒉|𝒆|𝒏|𝑰|𝑹|𝒚|𝑺|𝑭|𝒊|𝒂|𝒍|𝒚|𝑴|𝒕|𝑯|𝒓|𝑩|𝒈|𝒔|𝒕|𝒎|𝒑/i):upward(ytd-compact-video-renderer, ytd-video-renderer, ytd-movie-renderer, ytd-rich-item-renderer, ytd-show-renderer, ytd-playlist-renderer):remove()
-
