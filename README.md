@@ -10,6 +10,8 @@ either import
 5. Click Apply Changes
 ## Method 2
 Copy and paste the contents of [this link](https://raw.githubusercontent.com/JosephArney566/UBO-youtube-blocker-list/main/no-trash-or-shorts.txt) and [this other link](https://raw.githubusercontent.com/JosephArney566/UBO-youtube-blocker-list/main/lewd%20keyword%20blocker.txt)'s contents into My Filters tab in UBlock Origin, then you can make changes to it
+# Update
+Click the Clock icons, then click Update Now
 ## Credits
 ### Anti-Trash YoutubeWhyIsEvery4thYearAlwaysBad
 https://github.com/WhyIsEvery4thYearAlwaysBad/anti-cancer-filter-lists/blob/master/anti_trash_youtube.txt
