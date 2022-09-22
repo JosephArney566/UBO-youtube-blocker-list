@@ -1,0 +1,98 @@
+!youtube shorts blocker
+www.youtube.com###guide-content #endpoint[title="Shorts"]:upward(ytd-guide-entry-renderer)
+www.youtube.com###items #endpoint[title="Shorts"]:upward(ytd-mini-guide-entry-renderer)
+!www.youtube.com##ytd-browse ytd-grid-video-renderer:has(span.ytd-thumbnail-overlay-time-status-renderer:has-text(/\s(0:\d\d|1:0\d)\s/))
+!www.youtube.com##ytd-browse ytd-rich-item-renderer:has(span.ytd-thumbnail-overlay-time-status-renderer:has-text(/\s(0:\d\d|1:0\d)\s/))
+!www.youtube.com##ytd-search ytd-video-renderer:has(span.ytd-thumbnail-overlay-time-status-renderer:has-text(/\s(0:\d\d|1:0\d)\s/))
+!www.youtube.com##ytd-watch-next-secondary-results-renderer ytd-compact-video-renderer:has(span.ytd-thumbnail-overlay-time-status-renderer:has-text(/\s(0:\d\d|1:0\d)\s/))
+www.youtube.com##ytd-browse ytd-grid-video-renderer:has(span.ytd-thumbnail-overlay-time-status-renderer[aria-label="Shorts"])
+www.youtube.com##ytd-browse ytd-rich-item-renderer:has(span.ytd-thumbnail-overlay-time-status-renderer[aria-label="Shorts"])
+www.youtube.com##ytd-search ytd-video-renderer:has(span.ytd-thumbnail-overlay-time-status-renderer[aria-label="Shorts"])
+www.youtube.com##ytd-watch-next-secondary-results-renderer ytd-compact-video-renderer:has(span.ytd-thumbnail-overlay-time-status-renderer[aria-label="Shorts"])
+www.youtube.com##ytd-browse[page-subtype="subscriptions"] ytd-video-renderer span.ytd-thumbnail-overlay-time-status-renderer[aria-label="Shorts"]:upward(ytd-item-section-renderer)
+m.youtube.com##ytm-reel-shelf-renderer
+m.youtube.com##ytm-pivot-bar-renderer div.pivot-shorts:upward(ytm-pivot-bar-item-renderer)
+!m.youtube.com##ytm-browse ytm-rich-item-renderer:has(ytm-thumbnail-overlay-time-status-renderer span:has-text(/^(0:\d\d|1:0\d)$/))
+m.youtube.com##ytm-browse ytm-item-section-renderer ytm-video-with-context-renderer:has(ytm-thumbnail-overlay-time-status-renderer[data-style="SHORTS"])
+m.youtube.com##ytm-browse ytm-item-section-renderer ytm-compact-video-renderer:has(ytm-thumbnail-overlay-time-status-renderer[data-style="SHORTS"])
+m.youtube.com##ytm-search ytm-compact-video-renderer:has(ytm-thumbnail-overlay-time-status-renderer[data-style="SHORTS"])
+!m.youtube.com##ytm-single-column-watch-next-results-renderer ytm-video-with-context-renderer:has(ytm-thumbnail-overlay-time-status-renderer span:has-text(/^(0:\d\d|1:0\d)$/))
+
+!youtube shorts title blocker
+!www.youtube.com##ytd-browse ytd-grid-video-renderer:has(#video-title[title~="lofi" i])
+!www.youtube.com##ytd-browse ytd-rich-item-renderer:has(#video-title-link[title~="lofi" i])
+!www.youtube.com##ytd-search ytd-video-renderer:has(#video-title[title~="lofi" i])
+!www.youtube.com##ytd-watch-next-secondary-results-renderer ytd-compact-video-renderer:has(#video-title[title~="lofi" i])
+!www.youtube.com##ytd-browse[page-subtype="subscriptions"] ytd-video-renderer #video-title[title~="lofi" i]:upward(ytd-item-section-renderer)
+www.youtube.com##ytd-browse ytd-grid-video-renderer:has(#video-title[title~="#shorts" i])
+www.youtube.com##ytd-browse ytd-rich-item-renderer:has(#video-title-link[title~="#shorts" i])
+www.youtube.com##ytd-search ytd-video-renderer:has(#video-title[title~="#shorts" i])
+www.youtube.com##ytd-watch-next-secondary-results-renderer ytd-compact-video-renderer:has(#video-title[title~="#shorts" i])
+www.youtube.com##ytd-browse[page-subtype="subscriptions"] ytd-video-renderer #video-title[title~="#shorts" i]:upward(ytd-item-section-renderer)
+
+! Title: Anti-Trash YouTube
+! Version: 27November2020v1
+! Expires: 2 days
+! Description: Eliminates trash videos, channels, and features from the user's feeds, so that the experience is much more enjoyable.
+! Removes unnecesary stuff
+youtube.com##ytd-horizontal-card-list-renderer, ytd-badge-supported-renderer, ytd-rich-section-renderer, ytd-mini-guide-renderer
+! Removes Side Menu Playlists and Subscription List (Can be accessed in library)
+!youtube.com###guide-section-title:has-text(Subscriptions):upward(ytd-guide-section-renderer)
+!youtube.com##ytd-guide-collapsible-entry-renderer:has-text(Show more)
+! Put that "More from YouTube" somewhere else, since you stuff the important stuff at the BOTTOM.
+youtube.com##ytd-guide-section-renderer:has-text(More from YouTube)
+! For the last time stop pushing us your memberships.
+youtube.com##a#endpoint[href="/paid_memberships"]
+youtube.com###offer-module
+! Just let the user search for god sake...
+youtube.com##ytd-feed-filter-chip-bar-renderer:upward(1)
+!youtube.com##ytd-rich-shelf-renderer:has-text(/Latest YouTube posts|Free to watch/i)
+! Mixes are pointless. Just add an option for their appearance, or remove them.
+youtube.com###video-title-link[href*="start_radio=1"]:upward(ytd-rich-item-renderer)
+youtube.com##ytd-radio-renderer, ytd-compact-radio-renderer
+! Can you remove diming when scrubbing so we can replay stuff easier?
+youtube.com##.ytp-storyboard-framepreview-img:style(opacity: 1 !important)
+youtube.com##.ytp-storyboard-framepreview:style(background: none !important; transition: none !important)
+! Removes already played videos from user feed; will not remove if on the creator's channel. (Go to history for that.)
+!youtube.com##ytd-thumbnail-overlay-resume-playback-renderer:not(:upward(ytd-section-list-renderer[page-subtype="history"], ytd-browse[page-subtype="channels"])):upward(ytd-rich-item-renderer, ytd-compact-video-renderer, ytd-video-renderer, ytd-grid-video-renderer)
+! Filtering based on titles.
+! Reference Regex: /([\d:]+\s*((.?)(A|P)(.?)M(.?))|([$€£元₩₹₽₺฿₪﷼₱][\d,]+)|((.+)to(.+)))/i
+! Regex List
+! (vine|(diy|life)(?= hack(s?))|tik(\s*)tok|expose|giveaway|fortnite|unbox|gatcha|gone(?= sexual|wrong)|not(?= clickbait)|nursery(?= rhymes)|(for|with)(?= (kid(s|z)('?)|children|babies))|(kid(s|z)('?)|children|babies)\s*(\w+)|prank|orbeez) - All of these search terms just outright suck. Don't search these.
+! ([$€£元₩₹₽₺฿₪﷼₱]?[\d,]+) - Filters the $<blank> <blank> trash. 
+! ([\d:]+\s*((.?)(A|P)(.?)M(.?)) - Removes the 3am videos.
+! \b([A-Z\s]{3,}){3,}\b - Filters out videos with ≥3 all-cap words.
+youtube.com###video-title:has-text(/([\d:]+\s*((.?)(A|P)(.?)M(.?))|([元₩₹₽₺฿₪﷼₱][\d,]+)|(vine|(diy|life)(?= hack(s?))|tik(\s*)tok|expose|giveaway|fortnite|unbox|gatcha|gone(?= sexual|wrong)|not(?= clickbait)|nursery(?= rhymes)|(for|with)(?= (kid(s|z)('?)|children|babies))|(kid(s|z)('?)|children|babies)\s*(\w+)|prank|orbeez))/i):upward(ytd-compact-video-renderer, ytd-video-renderer, ytd-movie-renderer, ytd-rich-item-renderer, ytd-show-renderer, ytd-playlist-renderer):remove()
+! Removes all-cap titled videos.
+!youtube.com###video-title:has-text(/\b([A-Z\s]{3,}){3,}\b/m):upward(ytd-compact-video-renderer, ytd-video-renderer, ytd-movie-renderer, ytd-rich-item-renderer, ytd-show-renderer, ytd-playlist-renderer):remove()
+! Channel Blacklist
+youtube.com##ytd-channel-name:has-text(/(prank|orbeez|nursery(?= rhymes)|(for|with)(?= (kid(s|z)?|toddler(s?)|children|babies))|(kid(s|z)('?)|children|babies)\s*(\w+))/i):upward(ytd-channel-renderer, ytd-video-renderer):remove()
+! Filter based on description
+youtube.com###description-text:has-text(/((kid(s|z)('?)|children|babies)\s*(\w+)|prank|orbeez)/i):upward(ytd-video-renderer, ytd-movie-renderer, ytd-rich-item-renderer, ytd-show-renderer, ytd-playlist-renderer):remove()
+! Channel Blacklist for channels with too varied and simplified titles to filter with regexes.
+! IGN - Their "reviews" are basically just marketing.
+youtube.com##a[href^="/user/IGN" i]:upward(ytd-channel-renderer, ytd-rich-item-renderer, ytd-show-renderer, ytd-playlist-renderer, ytd-video-renderer)
+! IGN Hungary
+youtube.com##a[href="/channel/UC3UX8a0QJFBvlQ74NCpKTkw"]:upward(ytd-channel-renderer, ytd-rich-item-renderer, ytd-show-renderer, ytd-playlist-renderer, ytd-video-renderer)
+! CNN - King of fake news.
+youtube.com##a[href^="/user/CNN" i]:upward(ytd-channel-renderer, ytd-rich-item-renderer, ytd-show-renderer, ytd-playlist-renderer, ytd-video-renderer)
+youtube.com##a[href="/user/HLN" i]:upward(ytd-channel-renderer, ytd-rich-item-renderer, ytd-show-renderer, ytd-playlist-renderer, ytd-video-renderer)
+! Jimmy Kimmel and Fallon - Unlikable bastards
+youtube.com##a[href="/user/JimmyKimmelLive" i]:upward(ytd-channel-renderer, ytd-rich-item-renderer, ytd-show-renderer, ytd-playlist-renderer, ytd-video-renderer)
+youtube.com##a[href="/c/fallontonight" i]:upward(ytd-channel-renderer, ytd-rich-item-renderer, ytd-show-renderer, ytd-playlist-renderer, ytd-video-renderer)
+! Preston - Kidbait videos.
+youtube.com##a[href^="/channel/UCmr_vYKbp98f6kdRoer0iVw" i]:upward(ytd-channel-renderer, ytd-rich-item-renderer, ytd-show-renderer, ytd-playlist-renderer, ytd-video-renderer)
+youtube.com##a[href^="/channel/UCJZam2u1G0syq3kyqrCXrNw" i]:upward(ytd-channel-renderer, ytd-rich-item-renderer, ytd-show-renderer, ytd-playlist-renderer, ytd-video-renderer)
+youtube.com##a[href^="/user/PrestonPlayz" i]:upward(ytd-channel-renderer, ytd-rich-item-renderer, ytd-show-renderer, ytd-playlist-renderer, ytd-video-renderer)
+youtube.com##a[href^="/user/TBNRfrags" i]:upward(ytd-channel-renderer, ytd-rich-item-renderer, ytd-show-renderer, ytd-playlist-renderer, ytd-video-renderer)
+
+
+
+# lewd keyword blocker
+youtube.com###video-title:has-text(/ASMR|Vtuber|Calli|ch.|gura|Hololive|Ina|Cooksie|Yandere|Audio RP|Audio Roleplay|Shondopilled|horny|booba|anime|moan|cum|kronii|cuddles|girlfriend|Elira|nazuna|【|】|Kobo|【Vtuber】|moaning|Fauna|Holostars|IRyS|nenechi|cosplay|kiss|Lovers|Boob|pikamee|mumei|shondo|F1nn5ter|【Vtuber】|【ASMR】|AZKi|Holo|Azur Lane|D*CKS|shylily|d~|Loli|Shota|cunny|Neko|nya/i):upward(ytd-compact-video-renderer, ytd-video-renderer, ytd-movie-renderer, ytd-rich-item-renderer, ytd-show-renderer, ytd-playlist-renderer):remove()
+youtube.com##ytd-channel-name:has-text(/ASMR|Vtuber|Calli|ch.|gura|Hololive|Ina|Cooksie|Yandere|Audio RP|Audio Roleplay|Shondopilled|horny|booba|anime|moan|cum|kronii|cuddles|girlfriend|Elira|nazuna|【|】|Kobo|【Vtuber】|moaning|Fauna|Holostars|IRyS|nenechi|cosplay|kiss|Lovers|Boob|pikamee|mumei|shondo|F1nn5ter|【Vtuber】|【ASMR】|AZKi|Holo|Azur Lane|D*CKS|shylily|d~|Loli|Shota|cunny|Neko|nya/i):remove()
+youtube.com###description-text:has-text(/ASMR|Vtuber|Calli|ch.|gura|Hololive|Ina|Cooksie|Yandere|Audio RP|Audio Roleplay|Shondopilled|horny|booba|anime|moan|cum|kronii|cuddles|girlfriend|Elira|nazuna|【|】|Kobo|【Vtuber】|moaning|Fauna|Holostars|IRyS|nenechi|cosplay|kiss|Lovers|Boob|pikamee|mumei|shondo|F1nn5ter|【Vtuber】|【ASMR】|AZKi|Holo|Azur Lane|D*CKS|shylily|d~|Loli|Shota|cunny|Neko|nya/i):upward(ytd-video-renderer, ytd-movie-renderer, ytd-rich-item-renderer, ytd-show-renderer, ytd-playlist-renderer):remove()
+
+#block this stupid font that vtubers use to skirt demonitization
+youtube.com###video-title:has-text(/𝐖|𝐡|𝐚|𝐭|𝐫|𝐞|𝐄|𝐧|𝐝|𝐋|𝐮|𝐜|𝐬|𝐓|𝐘|𝐏|𝐒|𝗦|𝗰|𝗮|𝗿|𝗹|𝗲|𝗚|𝘁|𝘀|𝗼|𝗱|𝗯|𝘆|𝗠|𝗴|𝗻|𝗶|𝗳|𝗡|𝗗|𝗶|𝗕|𝘂|𝗣|𝗽|𝘆|𝑾|𝒉|𝒆|𝒏|𝑰|𝑹|𝒚|𝑺|𝑭|𝒊|𝒂|𝒍|𝒚|𝑴|𝒕|𝑯|𝒓|𝑩|𝒈|𝒔|𝒕|𝒎|𝒑/i):upward(ytd-compact-video-renderer, ytd-video-renderer, ytd-movie-renderer, ytd-rich-item-renderer, ytd-show-renderer, ytd-playlist-renderer):remove()
+
