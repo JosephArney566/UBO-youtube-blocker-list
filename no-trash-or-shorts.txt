@@ -19,11 +19,6 @@ m.youtube.com##ytm-search ytm-compact-video-renderer:has(ytm-thumbnail-overlay-t
 !m.youtube.com##ytm-single-column-watch-next-results-renderer ytm-video-with-context-renderer:has(ytm-thumbnail-overlay-time-status-renderer span:has-text(/^(0:\d\d|1:0\d)$/))
 
 !youtube shorts title blocker
-!www.youtube.com##ytd-browse ytd-grid-video-renderer:has(#video-title[title~="lofi" i])
-!www.youtube.com##ytd-browse ytd-rich-item-renderer:has(#video-title-link[title~="lofi" i])
-!www.youtube.com##ytd-search ytd-video-renderer:has(#video-title[title~="lofi" i])
-!www.youtube.com##ytd-watch-next-secondary-results-renderer ytd-compact-video-renderer:has(#video-title[title~="lofi" i])
-!www.youtube.com##ytd-browse[page-subtype="subscriptions"] ytd-video-renderer #video-title[title~="lofi" i]:upward(ytd-item-section-renderer)
 www.youtube.com##ytd-browse ytd-grid-video-renderer:has(#video-title[title~="#shorts" i])
 www.youtube.com##ytd-browse ytd-rich-item-renderer:has(#video-title-link[title~="#shorts" i])
 www.youtube.com##ytd-search ytd-video-renderer:has(#video-title[title~="#shorts" i])
@@ -62,7 +57,7 @@ youtube.com##.ytp-storyboard-framepreview:style(background: none !important; tra
 ! ([$€£元₩₹₽₺฿₪﷼₱]?[\d,]+) - Filters the $<blank> <blank> trash. 
 ! ([\d:]+\s*((.?)(A|P)(.?)M(.?)) - Removes the 3am videos.
 ! \b([A-Z\s]{3,}){3,}\b - Filters out videos with ≥3 all-cap words.
-youtube.com###video-title:has-text(/([\d:]+\s*((.?)(A|P)(.?)M(.?))|([元₩₹₽₺฿₪﷼₱][\d,]+)|(vine|(diy|life)(?= hack(s?))|tik(\s*)tok|expose|giveaway|fortnite|unbox|gatcha|gone(?= sexual|wrong)|not(?= clickbait)|nursery(?= rhymes)|(for|with)(?= (kid(s|z)('?)|children|babies))|(kid(s|z)('?)|children|babies)\s*(\w+)|prank|orbeez))/i):upward(ytd-compact-video-renderer, ytd-video-renderer, ytd-movie-renderer, ytd-rich-item-renderer, ytd-show-renderer, ytd-playlist-renderer):remove()
+youtube.com###video-title:has-text(/([\d:]+\s*((.?)(A|P)(.?)M(.?))|([元₩₹₽₺฿₪﷼₱][\d,]+)|(vine|(diy|life)(?= hack(s?))|tik(\s*)tok|expose|giveaway|fortnite|unbox|gatcha|gone(?= sexual|wrong)|nursery(?= rhymes)|(for|with)(?= (kid(s|z)('?)|children|babies))|(kid(s|z)('?)|children|babies)\s*(\w+)|prank|orbeez))/i):upward(ytd-compact-video-renderer, ytd-video-renderer, ytd-movie-renderer, ytd-rich-item-renderer, ytd-show-renderer, ytd-playlist-renderer):remove()
 ! Removes all-cap titled videos.
 !youtube.com###video-title:has-text(/\b([A-Z\s]{3,}){3,}\b/m):upward(ytd-compact-video-renderer, ytd-video-renderer, ytd-movie-renderer, ytd-rich-item-renderer, ytd-show-renderer, ytd-playlist-renderer):remove()
 ! Channel Blacklist
